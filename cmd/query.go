@@ -150,7 +150,7 @@ func queryFluxV2(fluxQuery, url, org, token string, c *http.Client) {
 		pdl := check.PerfdataList{
 			perfData[len(perfData)-1],
 		}
-		check.ExitWithPerfdata(rc, pdl, "InfluxDB Query Status")
+		check.ExitWithPerfdata(rc, pdl, "InfluxDB Query Status", perfData[len(perfData)-1].String())
 	}
 
 	check.Exit(rc, "InfluxDB Query Status")
